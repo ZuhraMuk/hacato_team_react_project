@@ -15,8 +15,11 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import Button from "@mui/material/Button";
 import SortIcon from "@mui/icons-material/Sort";
+import { Link, useLocation } from "react-router-dom";
 
 function NavBar() {
+  const location = useLocation();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -142,11 +145,11 @@ function NavBar() {
               "aria-labelledby": "basic-button",
             }}>
             <Typography sx={{ fontSize: 17, fontWeight: 550 }}>
-              Category
+              Filter
             </Typography>
             <MenuItem onClick={handleClose}>Femail</MenuItem>
             <MenuItem onClick={handleClose}>Male</MenuItem>
-            <MenuItem onClick={handleClose}>Children's</MenuItem>
+            <MenuItem onClick={handleClose}>Childrens</MenuItem>
           </Menu>
           <Typography
             variant="h6"
@@ -156,6 +159,21 @@ function NavBar() {
             Z&A
           </Typography>
           <LiveSearch />
+          <Box
+            sx={{
+              display: "flex",
+              width: "50%",
+              justifyContent: "space-around",
+            }}>
+            <Link to="/">Home</Link>
+            <Link to="/add">Add Products</Link>
+            {location.pathname === "/list" ? (
+              <span style={{ cursor: "pointer" }}>Products List</span>
+            ) : (
+              <Link to="/list">Products List</Link>
+            )}
+            {/* <Link to="/list">Products List</Link> */}
+          </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton

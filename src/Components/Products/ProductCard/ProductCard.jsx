@@ -15,42 +15,36 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import "./ProductCard.css";
+import { Link } from "react-router-dom";
 
-const ProductCard = () => {
+const ProductCard = ({ obj }) => {
   return (
     <Card sx={{ maxWidth: 300 }} id="card_active">
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: blue[500] }} aria-label="recipe">
-            {/* {obj.category[0].toUpperCase()} */}R
+            {obj.category[0].toUpperCase()}
           </Avatar>
         }
         action={
-          // <Link to={`/details/${obj.id}`}>
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-          // {/* </Link> */}
+          <Link to={`/details/${obj.id}`}>
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
+          </Link>
         }
-        // title={obj.title}
-        // subheader={obj.model}
-        title="Apple"
-        subheader="13 pro max"
+        title={obj.title}
+        subheader={obj.model}
       />
       <CardMedia
         component="img"
         height="280"
-        image="https://softech.kg/image/cache/46148fda07614998a56cbb35a0ca760c.png"
-        alt="apple"
-        // image={obj.img1}
-        // alt={obj.title}
+        image={obj.img1}
+        alt={obj.title}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary" className="cardText">
-          {/* {obj.description} */}
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. In ipsum
-          accusantium mollitia ad voluptatibus, atque impedit. Voluptates
-          quibusdam autem nam!
+          {obj.description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

@@ -1,21 +1,22 @@
 import React from "react";
+import Basket from "./Components/Basket/Basket";
+import Filter from "./Components/Filter/Filter";
 import Footer from "./Components/Footer/Footer";
-import HomePage from "./Components/HomePage/HomePage";
 import NavBar from "./Components/NavBar/NavBar";
 import ProductCard from "./Components/Products/ProductCard/ProductCard";
-import ProductDetails from "./Components/Products/ProductDetails/ProductDetails";
+import ProductContextProvider from "./context/ProductContextProvider";
 import MainRoutes from "./MainRoutes";
 
 const App = () => {
   return (
-    <>
+    <ProductContextProvider>
       <NavBar />
-      {/* <MainRoutes /> */}
+      <MainRoutes />
       {/* <ProductCard /> */}
-      {/* <ProductDetails /> */}
-      <HomePage />
+      {/* <Basket /> */}
+      {/* <Filter /> */}
       <Footer />
-    </>
+    </ProductContextProvider>
   );
 };
 

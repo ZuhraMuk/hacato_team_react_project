@@ -108,22 +108,13 @@ const Footer = () => {
                 alignItems: "center",
                 justifyContent: "space-evenly",
               }}>
-              <IconButton
-                size="large"
-                color="inherit"
-                className="active_social">
+              <IconButton size="large" color="inherit" id="active_social">
                 <TelegramIcon />
               </IconButton>
-              <IconButton
-                size="large"
-                color="inherit"
-                className="active_social">
+              <IconButton size="large" color="inherit" id="active_social">
                 <WhatsAppIcon />
               </IconButton>
-              <IconButton
-                size="large"
-                color="inherit"
-                className="active_social">
+              <IconButton size="large" color="inherit" id="active_social">
                 <InstagramIcon />
               </IconButton>
             </Box>
